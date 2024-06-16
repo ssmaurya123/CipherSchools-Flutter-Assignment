@@ -86,28 +86,28 @@ class TransactionListWidget extends StatelessWidget {
         if (filteredTransactions.isEmpty && range == "Today") {
           return const Center(
             child: Text(
-              "No transactions made Today.",
+              "No transactions here....",
               style: TextStyle(color: Colors.red, fontSize: 20),
             ),
           );
         } else if (filteredTransactions.isEmpty && range == "Week") {
           return const Center(
             child: Text(
-              "No transactions made this week.",
+              "No transactions here....",
               style: TextStyle(color: Colors.red, fontSize: 20),
             ),
           );
         } else if (filteredTransactions.isEmpty && range == "Month") {
           return const Center(
             child: Text(
-              "No transactions made this month.",
+              "No transactions here....",
               style: TextStyle(color: Colors.red, fontSize: 20),
             ),
           );
         } else if (filteredTransactions.isEmpty && range == "Year") {
           return const Center(
             child: Text(
-              "No transactions made this year.",
+              "No transactions here....",
               style: TextStyle(color: Colors.red, fontSize: 20),
             ),
           );

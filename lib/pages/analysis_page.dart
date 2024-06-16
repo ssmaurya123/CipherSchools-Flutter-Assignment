@@ -40,7 +40,7 @@ class AnalysisPage extends StatelessWidget {
                 colors: [
                   Colors.orange.shade100,
                   Colors.white
-                ], // Adjust colors as needed
+                ], 
               ),
             ),
           ),
@@ -55,7 +55,7 @@ class AnalysisPage extends StatelessWidget {
               ),
               DropdownButton<String>(
                 value: months[transactionProvider.selectedMonth -
-                    1], // Set the default selected month
+                    1], 
                 onChanged: (String? newValue) {
                   if (newValue != null) {
                     transactionProvider
@@ -111,11 +111,11 @@ class BarGraphWidget extends StatelessWidget {
   List<charts.Series<BarChartData, String>> _createSeries() {
     final data = [
       BarChartData(
-          'Income', int.parse(income.toStringAsFixed(0)), Colors.green),
+          'Income', int.parse(income.toStringAsFixed(0)), const Color.fromARGB(255, 104, 173, 106)),
       BarChartData(
-          'Expenses', int.parse(expense.toStringAsFixed(0)), Colors.red),
+          'Expenses', int.parse(expense.toStringAsFixed(0)), const Color.fromARGB(255, 192, 79, 71)),
       BarChartData(
-          'Savings', int.parse(savings.toStringAsFixed(0)), Colors.blue),
+          'Savings', int.parse(savings.toStringAsFixed(0)), const Color.fromARGB(255, 66, 134, 189)),
     ];
 
     return [

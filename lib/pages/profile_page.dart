@@ -17,35 +17,60 @@ class ProfilePage extends StatelessWidget {
 
     return Consumer<UserProvider>(builder: (context, userProvider, child) {
       return Scaffold(
-        appBar: AppBar(
-          title: const Text('Profile Page'),
-        ),
+        // appBar: AppBar(
+        //   title: const Text('Profile Page'),
+        // ),
         body: ListView(
           children: <Widget>[
-            UserAccountsDrawerHeader(
-              accountName: Text(
-                  '${userProvider.userInfo.fname} ${userProvider.userInfo.lname}'),
-              currentAccountPicture: Container(
-                padding: const EdgeInsets.all(3),
-                decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(color: Colors.white, width: 1)),
-                child: Container(
+            Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Row(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.all(3),
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(color: Colors.purple, width: 2),
+                    ),
                     child: ClipOval(
-                  child: Image(
-                    image: NetworkImage(userProvider.userInfo.purl.toString()),
+                      child: Image(
+                        image: NetworkImage(userProvider.userInfo.purl.toString()),
+                        width: 70,
+                        height: 70,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
                   ),
-                )),
+                  const SizedBox(width: 16),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Username',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 14,
+                        ),
+                      ),
+                      Text(
+                        '${userProvider.userInfo.fname} ${userProvider.userInfo.lname}',
+                        style: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                  const Spacer(),
+                  IconButton(
+                    icon: const Icon(Icons.edit, color: Colors.black),
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => const EditProfilePage()));
+                    },
+                  ),
+                ],
               ),
-              accountEmail: Text(userProvider.userInfo.email),
-            ),
-            ListTile(
-              leading: const Icon(Icons.person, color: Colors.orange),
-              title: const Text('Edit Profile'),
-              onTap: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const EditProfilePage()));
-              },
             ),
             ListTile(
               leading: const Icon(Icons.folder, color: Colors.purple),

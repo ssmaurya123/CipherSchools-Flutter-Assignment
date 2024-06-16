@@ -18,6 +18,7 @@ class _NewIncomePageState extends State<NewIncomePage> {
   TextEditingController descriptionController = TextEditingController();
 
   String? selectedCategory;
+  String? selectedWallet;
 
   final List<String> categories = [
     'Category',
@@ -27,8 +28,9 @@ class _NewIncomePageState extends State<NewIncomePage> {
     'Sales',
     'Other',
   ];
+  final List<String> walletOptions = ['Wallet', 'Bank'];
+
   bool isLoading = false;
-  final List<String> wallet = ['Wallet', 'Bank'];
 
   @override
   Widget build(BuildContext context) {
@@ -162,6 +164,34 @@ class _NewIncomePageState extends State<NewIncomePage> {
                         myController: descriptionController,
                         hintText: 'Description',
                         isPassword: false,
+                      ),
+                      const SizedBox(
+                        height: 30,
+                      ),
+                      Container(
+                        width: double.maxFinite,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 16, vertical: 8),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(16),
+                            border: Border.all(
+                                color: Colors.grey.shade300, width: 1)),
+                        child: DropdownButton<String>(
+                          hint: const Text("Wallet"),
+                          value: selectedWallet,
+                          onChanged: (String? newValue) {
+                            setState(() {
+                              selectedWallet = newValue;
+                            });
+                          },
+                          items: walletOptions
+                              .map<DropdownMenuItem<String>>((String value) {
+                            return DropdownMenuItem<String>(
+                              value: value,
+                              child: Text(value),
+                            );
+                          }).toList(),
+                        ),
                       ),
                       const Spacer(),
                       Container(
