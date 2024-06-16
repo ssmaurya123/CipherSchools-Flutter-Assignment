@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "529511400374",
+    "project_id": "cipherschools-assignment-96fdd",
+    "storage_bucket": "cipherschools-assignment-96fdd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:529511400374:android:6b35eaa9cd574e32ddb717",
+        "android_client_info": {
+          "package_name": "com.example.cipherschools_flutter_assignment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "529511400374-r6rsvi8srnkfd4udgqtqav6h7kpifhu9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRTgiVLP70QDHTXH_QTUl6Oqu-0a2WDy4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "529511400374-r6rsvi8srnkfd4udgqtqav6h7kpifhu9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

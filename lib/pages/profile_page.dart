@@ -17,9 +17,7 @@ class ProfilePage extends StatelessWidget {
 
     return Consumer<UserProvider>(builder: (context, userProvider, child) {
       return Scaffold(
-        // appBar: AppBar(
-        //   title: const Text('Profile Page'),
-        // ),
+
         body: ListView(
           children: <Widget>[
             Padding(
@@ -76,24 +74,21 @@ class ProfilePage extends StatelessWidget {
               leading: const Icon(Icons.folder, color: Colors.purple),
               title: const Text('Account'),
               onTap: () {
-                // Update the state of the app
-                // ...
+        
               },
             ),
             ListTile(
               leading: const Icon(Icons.settings, color: Colors.purple),
               title: const Text('Settings'),
               onTap: () {
-                // Update the state of the app
-                // ...
+                
               },
             ),
             ListTile(
               leading: const Icon(Icons.upload_file, color: Colors.purple),
               title: const Text('Export Data'),
               onTap: () {
-                // Update the state of the app
-                // ...
+                
               },
             ),
             ListTile(
