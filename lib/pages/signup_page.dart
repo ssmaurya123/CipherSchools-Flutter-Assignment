@@ -18,12 +18,13 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
-
   TextEditingController passwordController = TextEditingController();
 
   bool isLoading = false;
   bool? isChecked;
+  bool isPasswordVisible = false;
 
   @override
   Widget build(BuildContext context) {
@@ -129,15 +130,36 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 height: 80,
               ),
               MyTextField(
+                myController: nameController,
+                hintText: 'Name',
+                isPassword: false,
+              ),
+              const SizedBox(height: 20),
+              MyTextField(
                 myController: emailController,
                 hintText: 'Email',
                 isPassword: false,
               ),
               const SizedBox(height: 20),
-              MyTextField(
-                myController: passwordController,
-                hintText: 'Password',
-                isPassword: true,
+              TextField(
+                controller: passwordController,
+                obscureText: !isPasswordVisible,
+                decoration: InputDecoration(
+                  hintText: 'Password',
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        isPasswordVisible = !isPasswordVisible;
+                      });
+                    },
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(16.0),
+                  ),
+                ),
               ),
               const SizedBox(height: 20),
               Row(
