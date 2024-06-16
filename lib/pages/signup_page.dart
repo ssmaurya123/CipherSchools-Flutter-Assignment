@@ -117,9 +117,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: const BackButton(color: Colors.black),
-        title: const Text('Sign Up'),
+        title: const Text(
+          'Sign Up',
+          style: TextStyle(color: Colors.black),
+        ),
         centerTitle: true,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -148,7 +152,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   hintText: 'Password',
                   suffixIcon: IconButton(
                     icon: Icon(
-                      isPasswordVisible ? Icons.visibility : Icons.visibility_off,
+                      isPasswordVisible
+                          ? Icons.visibility
+                          : Icons.visibility_off,
                     ),
                     onPressed: () {
                       setState(() {
@@ -262,8 +268,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     children: [
                       SvgPicture.asset(
                         'assets/icons/ic_googleLogo.svg',
-                        height: 24.0, // Adjust the height as needed
-                        width: 24.0, // Adjust the width as needed
+                        height: 24.0, 
+                        width: 24.0, 
                       ),
                       const SizedBox(
                         width: 10,
